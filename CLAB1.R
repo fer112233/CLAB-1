@@ -67,4 +67,17 @@ cor(age_height_db$height, age_height_db$age)
 # With the correlation coefficient of 0.9943 we can tell that there is a really strong linear relationship, we can tell that there is a strong one when we get a value between 0.8 and 1, which is the maximum and would indicate that they are perfectly related.
 
 
+# 4
 
+cor.test(age_height_db$height, age_height_db$age)
+
+# 4 - Q3
+  # 1. Given a p-value of 4.428e-11, there is a probability of 4.428e-11 that the correlation coefficient between the 2 variables is 0, which would mean that there would not be a relationship between the 2.
+  # 2. The best estimate would be 0.9943661
+  # 3.
+    # 3.1 The interval for a 5% probability of beign wrong would be [0.9793465, 0.9984716], since those values would give a 0.05 p-value.
+    # 3.2
+    cor.test(age_height_db$height, age_height_db$age, conf.level = 0.99)
+    # With a probability of 1% of beign wrong, the interval gets smaller, to [0.9690234, 0.9989860].
+
+    
