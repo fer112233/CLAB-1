@@ -42,13 +42,18 @@ age_height_db <- read_excel("Datasets/ageandheight.xls", sheet="Hoja2")
 lmHeight = lm(height~age, data = age_height_db)
 summary(lmHeight)
 
+# Equation -> height = 64.9283 + 0.635 * age
+
 p <- ggplot(age_height_db, aes(age, height, col="pink")) +
   geom_point() +
   stat_smooth(method = lm, aes(col="lightblue")) +
   theme(legend.position = "none")
 p
 
+# 2 - Q1
 
+cint_age <- confint(lmHeight, "age", level=0.99)
+cint_age
 
 
 
