@@ -56,7 +56,15 @@ cint_age <- confint(lmHeight, "age", level=0.99)
 cint_age
 
 
+# 3
 
+cov(age_height_db$height, age_height_db$age)
+cor(age_height_db$height, age_height_db$age)
+
+# 3 - Q2
+
+# Since the covariance is positive we can tell that when the height parameter increases, the age one also increases, same when decreasing.
+# With the correlation coefficient of 0.9943 we can tell that there is a really strong linear relationship, we can tell that there is a strong one when we get a value between 0.8 and 1, which is the maximum and would indicate that they are perfectly related.
 
 
 
