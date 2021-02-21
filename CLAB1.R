@@ -81,7 +81,7 @@ cor.test(age_height_db$height, age_height_db$age)
     # 3.1 The interval for a 5% probability of beign wrong would be [0.9793465, 0.9984716], since those values would give a 0.05 p-value.
     # 3.2
     cor.test(age_height_db$height, age_height_db$age, conf.level = 0.99)
-    # With a probability of 1% of beign wrong, the interval gets smaller, to [0.9690234, 0.9989860].
+    # With a probability of 1% of beign wrong, the interval gets bigger, to [0.9690234, 0.9989860].
 
 
 # 5
@@ -253,3 +253,7 @@ predicted_time <- predict(model_time, newdata = last_row)
 cat("Predicted time vs Real time:\n", predicted_time, "   vs   ", real_time)
 
 # It is indeed a good prediction for our usecase, we want to predict when a pizza order will arrive to a customer house, we predicted it with an error of 1 minute which doesn't imply a difference in this situation.
+
+
+# 9
+
