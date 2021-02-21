@@ -275,7 +275,7 @@ cat("Predicted time vs Real time:\n", predicted_time, "   vs   ", real_time)
 
 # Average Debt and Total Costs have a p-value of 0.69 and 0.228 respectively which is higher than 0.05, we can try to remove these two variables and see if the adjusted r-squared and standard improve.
 # We Re-do the Excel regression without these 2 variables.
-# We improved the adjusted R-Squared to 0.41429, lowered standard error to 0.088795 and increased coefficient of multiple correlation to 0.657579.
+# We improved the adjusted R-Squared to 0.41429 and lowered standard error to 0.088795.
 # Even though it was a small improvement, it was indeed an improvement and we also decreased the complexity of the model by removing the 2 variables.
 
 
