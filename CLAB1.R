@@ -130,12 +130,12 @@ plot(temp_model, which=1)
 
 # 7 - Q8
 
-temp_model_cubic <- lm(Pressure~Temperature+I(Temperature^2)+I(Temperature^3), data=pressure_db)
+temp_model_cubic <- lm(Pressure~Temperature+I(Temperature^2), data=pressure_db)
 summary(temp_model_cubic)
 
 plot(temp_model_cubic, which=1)
 
-# By adding a quadratic and cubic term to the model we get a better model, with an Adjusted R-Squared of 0.9994 and a residuals vs fitted plot wich is flat now.
+# By adding a quadratic term to the model we get a better model, with an Adjusted R-Squared of 0.9994 and a residuals vs fitted plot wich is flat now.
 
 
 # 8
