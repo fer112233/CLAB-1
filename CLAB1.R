@@ -1,5 +1,6 @@
 library(ggplot2)
 library(readxl)
+library(broom)
 
 # 1 - 11a)
 
@@ -80,4 +81,35 @@ cor.test(age_height_db$height, age_height_db$age)
     cor.test(age_height_db$height, age_height_db$age, conf.level = 0.99)
     # With a probability of 1% of beign wrong, the interval gets smaller, to [0.9690234, 0.9989860].
 
-    
+
+# 5
+
+ggplot(lmHeight, aes(x = .fitted, y = .resid)) + geom_point() + geom_hline(yintercept=0)
+
+# 5 - Q4
+
+plot(lmHeight, which=1)
+plot(lmHeight, which=2)
+
+# 5 - Q5
+
+# In the first plot we can see that the residuals are randomly distributed, hence, there is no relation whatsoever between them, that indicates that they are mostly normal errors, if for example we saw a pattern like a curve, we would know that our model is not good since that relation should be included in our model.
+# In the second plot we check the normality of the residuals with a qq-plot, we see a linear trend which indicates that the error terms are normally distributed, the normal distribution is the distribution that explains random deviation, hence supporting what we saw on the 1st plot.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
