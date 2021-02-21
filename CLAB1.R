@@ -1,6 +1,7 @@
 library(ggplot2)
 library(readxl)
 library(broom)
+library(olsrr)
 
 # 1 - 11a)
 
@@ -97,8 +98,15 @@ plot(lmHeight, which=2)
 # In the second plot we check the normality of the residuals with a qq-plot, we see a linear trend which indicates that the error terms are normally distributed, the normal distribution is the distribution that explains random deviation, hence supporting what we saw on the 1st plot.
 
 
+# 6
 
+ols_plot_resid_qq(lmHeight)
 
+ols_test_normality(lmHeight)
+# From this test we get a Shaphiro-Wilk normality test with a 0.3154 p-value which is higher than the standard 0.05, that means that the distribution of the data is not significantly different from a normal distribution, hence, it follows a normal distribution, the same thing our eyes predicted.
+
+ols_test_breusch_pagan(lmHeight)
+# In this second test we test whether we have or not heteroscedasticity in our data, which would mean that the residuals are not homogeneous, hence they are not random and our linear regression model is not good. With a p value of 0.63369, we conclude that since it is way higher than our standard 0.05, there is no enough evidence to claim that our data is heteroscedasticity, so our linear model is good for now. Backing up our findings from the visual inspection in Ex. 5.
 
 
 
