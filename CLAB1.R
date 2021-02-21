@@ -116,7 +116,26 @@ pressure_db <- read_excel("Datasets/pressure.xlsx")
 
 # 7 - Q7
 
+temp_model <- lm(Pressure~Temperature, data=pressure_db)
+summary(temp_model)
+
+plot(pressure_db$Temperature, pressure_db$Pressure, pch = 16, cex = 1.3, col = "blue", main = "PRESSURE PLOTTED AGAINST TEMPERATURE", xlab = "TEMPERATURE", ylab = "PRESSURE")
+abline(temp_model)
+
+plot(temp_model, which=1)
+
+# From the summary we see that the Adjusted R-Squared is really high, with a value of 0.8898, it would mean that the model can predict 88.98% of the outcomes, but if we see the plot we can clearly see an issue with the model.
+# The Temperature - Pressure is not a linear relation but our model is. Our model is not precise at all and it is not a good fit regardless of the Adjusted R-Squared value, we need to try to find a better model by adding a quadratic or cubic term.
+# We confirm this by looking at the residuals vs fitted plot, we can clearly see a non linear trend on the residuals.
+
 # 7 - Q8
+
+temp_model_cubic <- lm(Pressure~Temperature+I(Temperature^2)+I(Temperature^3), data=pressure_db)
+summary(temp_model_cubic)
+
+plot(temp_model_cubic, which=1)
+
+# By adding a quadratic and cubic term to the model we get a better model, with an Adjusted R-Squared of 0.9994 and a residuals vs fitted plot wich is flat now.
 
 
 # 8
