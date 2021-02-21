@@ -255,5 +255,27 @@ cat("Predicted time vs Real time:\n", predicted_time, "   vs   ", real_time)
 # It is indeed a good prediction for our usecase, we want to predict when a pizza order will arrive to a customer house, we predicted it with an error of 1 minute which doesn't imply a difference in this situation.
 
 
-# 9
+# 9 Excel
+
+# 9 - a)
+
+# We computed a regression model using Excel's Data Analysis tool.
+# We obtain an adjusted R-Squared of 0.41384, which means that the model can explain around 41.38% of the variation.
+# We also obtain a standard error of 0.088829, which is quite low.
+# It also gives us a Coefficient of multiple correlation of 0.6663 which tells us how strong is the linear relationship, having 1 as the maximum.
+# Overall these variables tell us that the model is actually good and usable.
+
+# 9 - b)
+
+# The significant parameters at a 95% confidence are Undergraduate Enrollment and Admission Rate. For the other variables we do not have enough evidence to prove that they actually have an impact on the 4th year grad. rate.
+# The reason behind this selection is the p-value given for each variable in excel, it has to be lower than the 0.05 of the confidence level. For Admission Rate and Undergraduate Enrollment their p-values are 4.976*10^-7 and 1.779*10^-4 which are way lower than 0.05.
+# The other vars have p-values higher than 0.05 so we cannot tell for sure if they actually make a real difference in the model.
+
+# 9 - c)
+
+# Average Debt and Total Costs have a p-value of 0.69 and 0.228 respectively which is higher than 0.05, we can try to remove these two variables and see if the adjusted r-squared and standard improve.
+# We Re-do the Excel regression without these 2 variables.
+# We improved the adjusted R-Squared to 0.41429, lowered standard error to 0.088795 and increased coefficient of multiple correlation to 0.657579.
+# Even though it was a small improvement, it was indeed an improvement and we also decreased the complexity of the model by removing the 2 variables.
+
 
